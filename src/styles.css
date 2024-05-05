@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/vendor/fontawesome-free/css/all.min.css';
+@import './assets/css/sb-admin-2.min.css';
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pull-right {
+    text-align: right !important;
+}
+
+.rounded-rectangle {
+    border-radius: 30px;
+    padding: 15px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+        /* Style for select dropdown */
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Customizing the appearance of the select dropdown arrow */
+        .custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-right: 30px; /* Adjust as needed to move the arrow icon */
+            width: 100%;
+        }
+    
+        .rounded-rectangle2 {
+            border-radius: 30px;
+        }

@@ -1,0 +1,73 @@
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="">
+            <i class="fas fa-fw fa-building"></i> OBDRS
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto mx-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fas fa-home mx-1"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about-us"><i class="fas fa-info-circle mx-1"></i>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="fas fa-phone mx-1"></i>Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">
+                <i class="fas fa-sign-in-alt"></i> Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Page Content -->
+  <div class="container" ng-controller="HomeController">
+    <div class="jumbotron mt-5">
+      <h1 class="display-4">Welcome to the Online Barangay Document Request System</h1>
+      <p class="lead">Submit your requests for barangay documents online with ease.</p>
+      <hr class="my-4">
+      <p>Click below to get started:</p>
+      <a class="btn btn-primary btn-lg" href="/login" role="button">Request Documents</a>
+    </div>
+  
+    <!-- Contact Us Section -->
+    <section id="contact">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <h2>Contact Us</h2>
+          <p>Have any questions or feedback? Feel free to get in touch with us using the form below:</p>
+          <form>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Message:</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light text-center py-3 mt-5">
+    <div class="container">
+      <span>&copy; 2024 Online Barangay Document Request System</span>
+    </div>
+  </footer>
+  

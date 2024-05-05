@@ -1,0 +1,99 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" style="min-height: 982px;max-height: auto;">
+
+    <div style="min-height: auto;">
+        <!-- Sidebar -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <div class="sidebar-brand-icon">
+               &ensp;<img src="/assets/postal-service.png" height="55" alt="">
+            </div>
+            <br>
+            <div class="sidebar-brand-text mx-0 mt-1 text-start">
+              Online Request
+            </div>
+        </a>
+
+        <hr class="sidebar-divider my-0">
+
+        <hr class="sidebar-divider">
+
+        <div *ngIf="role === 'administrator'">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="/admin-dashboard">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Navigation Menu
+            </div>
+
+            <!-- Nav Item - Document Request Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Document Request</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="/barangay-clearance">Barangay Clearance</a>
+                        <a class="collapse-item" href="/zone-clearance">Zone Clearance</a>
+                        <a class="collapse-item" href="/certificate-of-indigency">Certificate of Indigency</a>
+                        <a class="collapse-item" href="/certificate-of-residency">Certificate of Residency</a>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/view-messages">
+                    <i class="fas fa-fw fa-clipboard-list"></i>
+                    <span>View Messages</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/request-logs">
+                    <i class="fas fa-fw fa-chart-bar"></i>
+                    <span>Generate Reports</span></a>
+            </li>
+
+        </div>
+
+        <div *ngIf="role === 'client'">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="/dashboard">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Navigation Menu
+            </div>
+
+            <!-- Nav Item - Request Document -->
+            <li class="nav-item">
+                <a class="nav-link" href="/request-document">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Request Document</span></a>
+            </li>
+
+
+            <!-- Nav Item - Request Logs -->
+            <li class="nav-item">
+                <a class="nav-link" href="/request-logs">
+                    <i class="fas fa-fw fa-clipboard-list"></i>
+                    <span>Request Logs</span></a>
+            </li>
+
+        </div>
+    </div>
+</ul>

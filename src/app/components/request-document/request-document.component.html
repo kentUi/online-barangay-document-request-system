@@ -1,0 +1,150 @@
+<div id="wrapper">
+    <app-sidemenu style="background-color: #224abe"></app-sidemenu>
+    <div id="content-wrapper" class="d-flex flex-column" style="color: #000 !important">
+        <div id="content">
+            <app-header></app-header>
+
+            <div class="container-fluid">
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-primary card-shadow" id="id_main"
+                            style="min-height: 10%; margin-top: -10px; height: auto;">
+                            <div class="card-header" style="margin-bottom: -12px;">
+                                <div class="container-fluid">
+                                    <h4 class="txt-header">
+                                        <span class="fas fa-fw fa-file-alt"></span> Request Documents
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="card-body" style="color: #000">
+                                <div class="container-fluid txt">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <br>
+                                            <table class="table mb-3 " style="color: #000">
+                                                <tbody>
+                                                    <tr>
+                                                        <th width="550">Document Type</th>
+                                                        <th>Requirements</th>
+                                                        <th class="pull-right">Specific Payment Fee(s)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pb-2">Barangay Clearance</td>
+                                                        <td>Zone Clearance</td>
+                                                        <td class="pull-right" style="font-weight: bold; color: red">₱
+                                                            100.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pb-2">Zone Clearance</td>
+                                                        <td>None</td>
+                                                        <td class="pull-right" style="font-weight: bold; color: red">₱
+                                                            20.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pb-2">Certificate of Indigency</td>
+                                                        <td>Zone Clearance</td>
+                                                        <td class="pull-right" style="font-weight: bold; color: red">₱
+                                                            50.00</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="pb-2">Certificate of Residency</td>
+                                                        <td>Zone Clearance</td>
+                                                        <td class="pull-right" style="font-weight: bold; color: red">₱
+                                                            50.00</td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-4" style=" text-align: center; padding-top: 20px;">
+
+                                            <img src="../../../assets/gcash.png" class="img-responsive mx-1 mt-4"
+                                                height="100">
+                                        </div>
+
+                                        <div class="col-md-8"><br>
+                                            <div class="container-fluid">
+                                                <h4 class="txt-header">
+                                                    <span class="fas fa-fw fa-credit-card"></span> Payment Method
+                                                </h4>
+
+                                                <ol>
+                                                    <li>In-person Payment</li>
+                                                    <li>GCash (Proof of Billing) </li>
+                                                </ol>
+                                                <ul>
+                                                    <li><b>NOTE: </b><i>For In-Person Payment, just leave the
+                                                            <b style="color: red">'Proof of Billing'</b> blank </i></li>
+                                                    <li><b>BARANGAY GCASH ACCOUNT #:</b><b style="color: red">
+                                                            0912-345-6789</b></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <form (submit)="onSubmit()" id="request_docs" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <hr>
+                                            <div class="form-group">
+                                                <label>Request Files <b class="lbl-red">*</b></label>
+                                                <select class="form-control" name="inp_documents" (change)="changeOptions($event.target.value)">
+                                                    <option disabled>-- SELECT --</option>
+                                                    <option value="Barangay Clearance">Barangay Clearance</option>
+                                                    <option value="Zone Clearance">Zone Clearance</option>
+                                                    <option value="Certificate of Indigency">Certificate of Indigency</option>
+                                                    <option value="Certificate of Residency">Certificate of Residency</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Attach File (Place your 'Zone Clearance' here)</label>
+                                                <input type="file" class="form-control" name="inp_file" accept=".png,.pdf,.jpg" multiple (change)="onFileChange($event, 'inp_file')">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Proof of Billing</label>
+                                                <input type="file" class="form-control" name="inp_billing" accept=".png,.pdf,.jpg" multiple (change)="onFileChange($event, 'inp_billing')">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Purpose of Request <b class="lbl-red">*</b></label>
+                                                <textarea class="form-control" placeholder="Write here.." required rows="3" name="inp_purpose"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p>
+                                        <input type="checkbox" id="term" style="font-size: 52px !important">
+                                        <label for="term" style="cursor: pointer;"><b style="color: red">IMPORTANT</b> I understand that if I decided to cancel my document request. The Brgy will not be obligated to refund any of the transaction fees. I have provided accurate and true information.</label>
+                                    </p>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <a href="/request-document" class="btn btn-default txt" style="letter-spacing: 2px">
+                                                <span class="fa fa-angle-double-left"></span> Return
+                                            </a>
+                                            <button type="submit" class="btn btn-danger txt" style="letter-spacing: 2px">
+                                                <span class="fa fa-times"></span> Submit Now!
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                                <hr>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <app-footer></app-footer>
+    </div>
+</div>
